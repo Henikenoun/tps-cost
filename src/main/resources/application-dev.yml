@@ -1,0 +1,40 @@
+server:
+  port: 8089
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: css12345
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: 1025
+    username: ahmed
+    password: heni
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+application:
+  security:
+    jwt:
+      secret-key: 40DF64D5DJ4U5KFG65D5FYJ4GYY54846FJ5465FDJ5D7K47T6R1R8T9R4D0TGY2T654DD1FS
+      expiration: 3600000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+    file:
+      uploads:
+        photos-output-path: ./uploads
+
